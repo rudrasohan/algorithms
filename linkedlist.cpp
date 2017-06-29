@@ -33,5 +33,5 @@ int main()
 		cout << temp->data << endl;
 		temp = temp->link;
 	}
-
+	return 0;
 }
