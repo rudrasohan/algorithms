@@ -13,14 +13,15 @@ void create_list();
 void display();
 void display_rec(Node*);
 void reverse_itr();
-//void reverse_rec();
+void reverse_rec(Node*);
 
 int main()
 {
 	create_list();
 	display();
-	reverse_itr();
+	reverse_rec(head);
 	display_rec(head);
+
 	return 0;
 }
 
@@ -90,4 +91,17 @@ void display_rec(Node* p)
 		return;
 	cout << p->data << endl;
 	display_rec(p->next);
+}
+
+void reverse_rec(Node* p)
+{
+	if(p->next == NULL)
+	{	
+		head = p;
+		return;
+	}	
+	reverse_rec(p->next);
+	Node* q = p->next;
+	q->next = p;
+	p->next = NULL;
 }
