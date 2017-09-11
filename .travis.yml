@@ -1,5 +1,5 @@
 install: make get-deps
-./configure && make && make test
+
 language: cpp
 
 compiler:
