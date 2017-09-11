@@ -1,0 +1,10 @@
+install: make get-deps
+./configure && make && make test
+language: cpp
+
+compiler:
+  - g++
+
+before_install:
+  - test -n $CC  && unset CC
+  - test -n $CXX && unset CXX
