@@ -1,10 +1,12 @@
-install: make get-deps
+before_install:
+  - test -n $CC  && unset CC
+  - test -n $CXX && unset CXX
+  
+install: ./install-dependencies.sh
 
 language: cpp
 
 compiler:
   - g++
 
-before_install:
-  - test -n $CC  && unset CC
-  - test -n $CXX && unset CXX
+
