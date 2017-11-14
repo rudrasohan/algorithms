@@ -40,11 +40,10 @@ void Graph::shortestPath(int src)
  
    
     vector<int> dist(V, INF);
-    vector<int> parent(V, 99);
+    vector<int> parent(V, -1);
     vector<bool> inMST(V, false);
     pq.push(make_pair(0, src));
     dist[src] = 0;
-    parent[src] = -1;
    
     while (!pq.empty())
     {
@@ -73,8 +72,8 @@ void Graph::shortestPath(int src)
  
    
     printf("Vertex Parents from Source\n");
-    for (int i = 0; i < V; ++i)
-        printf("%d \t\t %d\n", i, parent[i]);
+    for (int i = 1; i < V; ++i)
+        printf("%d - %d\n",parent[i],i);
 }
  
 
